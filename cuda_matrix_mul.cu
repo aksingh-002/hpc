@@ -49,7 +49,7 @@ int main()
     cudaMemcpy(d_b, b, matrixSize, cudaMemcpyHostToDevice);
 
     // Define block and grid dimensions
-    dim3 threadsPerBlock(2, 2);
+    dim3 threadsPerBlock(2, 2); //can be upto 32 x 32
     dim3 blocksPerGrid((N + threadsPerBlock.x - 1) / threadsPerBlock.x, (N + threadsPerBlock.y - 1) / threadsPerBlock.y);
 
     // Launch kernel
